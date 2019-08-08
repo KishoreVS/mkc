@@ -1,0 +1,12 @@
+
+<hibernate-mapping>
+	<class name = "Employee">
+		<id name = "eid" column = "empid">
+			<generator class = "assigned">
+			</generator>
+		</id>
+		<property name = "ename" column = "empname">
+		</property>
+		
+	</class>
+</hibernate-mapping>

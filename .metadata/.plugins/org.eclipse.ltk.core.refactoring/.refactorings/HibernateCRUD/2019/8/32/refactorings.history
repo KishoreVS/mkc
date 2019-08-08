@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 4 elements from project &apos;HibernateCRUD&apos;&#x0D;&#x0A;- Original project: &apos;HibernateCRUD&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     hibernate.cfg.out.out.xml&#x0D;&#x0A;     hibernate.cfg.out.xml&#x0D;&#x0A;     hibernate.hbm.out.out.xml&#x0D;&#x0A;     hibernate.hbm.out.xml" description="Delete elements" element1="src/hibernate.cfg.out.out.xml" element2="src/hibernate.cfg.out.xml" element3="src/hibernate.hbm.out.out.xml" element4="src/hibernate.hbm.out.xml" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="4" stamp="1565248592909" subPackages="false" version="1.0"/>
+</session>
