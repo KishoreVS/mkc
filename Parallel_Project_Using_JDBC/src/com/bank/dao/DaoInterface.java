@@ -1,6 +1,7 @@
 package com.bank.dao;
 
 import java.util.HashMap;
+import java.util.List;
 
 import com.bank.user.bean.TransactionBean;
 import com.bank.user.bean.UserBean;
@@ -14,7 +15,7 @@ public interface DaoInterface {
 	String Deposit(int accountId,int amount);
 	String withDraw(int accountId,int amount);
 	String fundTransfer(int sourceAccountId,int destinationAccountId,int amount);
-	HashMap<Integer, UserBean> printTransactions(int accountId);
+	List<TransactionBean> printTransactions(int accountId);
 	//UserBean printTransactions(int accountId);
 	//following are validation methods.
 	//boolean accountIdCheck(String accountId);

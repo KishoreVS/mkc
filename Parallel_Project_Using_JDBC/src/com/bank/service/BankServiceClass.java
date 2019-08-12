@@ -7,21 +7,6 @@ import com.bank.user.bean.TransactionBean;
 import com.bank.user.bean.UserBean;
 import java.util.*;
 
-//this class use to create random account Id.
-class RandomAccountIdGenerator{
-	static Random rand = new Random();
-	static String generateRandom(String userName,long mobileNumber) {
-		String s1 = Long.toString(mobileNumber);
-		String name = userName.substring(0,2);
-		int n = rand.nextInt(100);
-		String pass = s1.substring(4,8);
-		String accountId = name.toUpperCase()+pass+n;
-		return accountId;
-	}
-	
-}
-
-
 
 
 public class BankServiceClass implements BankServiceInterface {
@@ -87,36 +72,30 @@ public class BankServiceClass implements BankServiceInterface {
 	@Override
 	public String printTransactions(int accountId) {
 		// TODO Auto-generated method stub
-		HashMap hm = ds.printTransactions(accountId);
-//		
-//		System.out.println(hm);
-//		
-//		TransactionBean tb = (TransactionBean) hm.getTransactions();
-//		
-//		System.out.println(tb);
-//		
-//		return null;
-		Set s = hm.entrySet();
+		List<TransactionBean> hm = ds.printTransactions(accountId);
+
+		Iterator i = hm.iterator();
 		
-		Iterator i = s.iterator();
-		String trans = "" ;
-//		while(i.hasNext()) {
-//			//Map<Integer, TransactionBean>.Entry<Integer,TransactionBean> pair = (Map.Entry<Integer, TransactionBean>) i.next(); 
-//			
-//			Map.Entry pair = (Map.Entry)i.next();
-//			
-//			int tid = (int) pair.getKey();
-//			System.out.println();
-//			UserBean tb = (UserBean) pair.getValue();
-//			
-//			trans = trans +"\n"+"transaction ID = "+tid+"|| Transaction Type = "+tb.getTransactionType()+" || Date = "+tb.getTransactionDate()+" || account id = "+tb.getAccountId()+"|| amount = "+tb.getAmount()
-//					+" || to account id= "+tb.getToAccountId()+"\n";
-//			
-//		}
+		String s = "";
+		while(i.hasNext()) {
+			
+			TransactionBean t = (TransactionBean) i.next();
+			
+			if(t.getToAccountId() != 0) {
+				s = s+"\n" + "transaction ID = "+t.getTransactionId()+"|| Transaction Type = "+t.getTransactionType()+" || Date = "+t.getTransactionDate()+" || account id = "+t.getUserbean().getAccountId()+"|| amount = "+t.getAmount()
+				+" || to account id= "+t.getToAccountId();
+			}
+			else {
+				s = s+"\n" + "transaction ID = "+t.getTransactionId()+"|| Transaction Type = "+t.getTransactionType()+" || Date = "+t.getTransactionDate()+" || account id = "+t.getUserbean().getAccountId()+"|| amount = "+t.getAmount()
+				;
+			}
+			
+			
 		
-		//System.out.println();
+			
+		}
 		
-		return trans;
+		return s;
 		
 		//return ds.printTransactions(accountId);
 	}

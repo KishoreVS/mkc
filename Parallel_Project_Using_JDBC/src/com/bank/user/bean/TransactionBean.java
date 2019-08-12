@@ -25,11 +25,14 @@ public class TransactionBean {
 	@Column(name = "transactionId",length = 20)
 	private int transactionId;
 	
+	
+
+
 	@Override
 	public String toString() {
-		return "TransactionBean [transactionId=" + transactionId + ", transactionType=" + transactionType
+		return "TransactionId=" + transactionId + ", transactionType=" + transactionType
 				+ ", toAccountId=" + toAccountId + ", transactionDate=" + transactionDate + ", amount=" + amount
-				+ "]";
+				+ ", userbean=" + userbean.getAccountId() + "]";
 	}
 
 
@@ -45,7 +48,7 @@ public class TransactionBean {
 //	private int accountId;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-//	@JoinColumn(name="accountid")
+	@JoinColumn(name="accountid")
 	private UserBean userbean;
 	
 	

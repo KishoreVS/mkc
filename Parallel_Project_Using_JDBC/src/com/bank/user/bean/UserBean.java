@@ -26,7 +26,7 @@ public class UserBean {
 	@Override
 	public String toString() {
 		return "UserBean [accountId=" + accountId + ", name=" + name + ", accountPassword=" + accountPassword
-				+ ", mobileNumber=" + mobileNumber + ", Balance=" + Balance + ", transactions=" + transactions + "]";
+				+ ", mobileNumber=" + mobileNumber + ", Balance=" + Balance +" ]";
 	}
 
 	@Column(name = "username", length = 20)
@@ -39,8 +39,8 @@ public class UserBean {
 	private int Balance = 0;
 	
 	
-	@OneToMany(mappedBy = "userbean",cascade=CascadeType.ALL)
-	private List<TransactionBean> transactions = new ArrayList<TransactionBean>();
+//	@OneToMany(mappedBy = "userbean",cascade=CascadeType.ALL)
+//	private List<TransactionBean> transactions = new ArrayList<TransactionBean>();
 	
 	//private ArrayList<String> tranactions = new ArrayList<String>();
 
@@ -95,13 +95,13 @@ public class UserBean {
 		this.mobileNumber = mobileNumber;
 	}
 
-	public List<TransactionBean> getTransactions() {
-		return transactions;
-	}
-
-	public void setTransactions(List<TransactionBean> transactions) {
-		this.transactions = transactions;
-	}
+//	public List<TransactionBean> getTransactions() {
+//		return transactions;
+//	}
+//
+//	public void setTransactions(List<TransactionBean> transactions) {
+//		this.transactions = transactions;
+//	}
 
 //	public TransactionBean getTransactions() {
 //		return transactions;

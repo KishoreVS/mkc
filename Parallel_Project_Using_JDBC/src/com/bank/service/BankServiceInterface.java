@@ -1,5 +1,9 @@
 package com.bank.service;
 
+import java.util.List;
+
+import com.bank.user.bean.TransactionBean;
+
 public interface BankServiceInterface {
 	
 	//This all service methods
